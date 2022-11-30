@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title></title>
+    <!-- <link href="herder.html" type="text/css" rel="stylesheet"> -->
+    <link href="./main.css" type="text/css" rel="stylesheet"> 
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar_logo">
+            <a href="./main.html"><img src="./images/logo.png" width="75" height="50">
+                <h1>우동</h1>
+            </a>
+        </div>
+        <ul class="navbar_menu">
+            <a href="./Food/Food메인.html"><li>Food</li></a>
+            <a href="./Entertainment/Entertainment메인.html"><li>Entertainment</li></a>
+            <a href="./Story/story.html"><li>Story</li></a>
+        </ul>
+        <div class="SearchArea">
+            <form>
+                <!-- 검색창을 만들었으며, 그 안에 Search라는 단어를 넣음 -->
+                <input type="search" placeholder="Search">
+                <span>검색</span>
+            </form>
+        </div>
+        <ul class="navbar_login">
+            <a href="./로그인/로그인카카오api.html"><li>로그인</li></a>
+            <a href="./회원가입/회원가입.html"><li>회원가입</li></a>
+        </ul>
+        <a href="#" class="navbar_toggleBtn">
+            <img src="images/menu_btn.png" width="30" height="20" color="white">
+        </a>
+    
+    </nav>
+
+    <!-- 인트로 start -->
+    <div class="intro">
+        <!-- muted: 소리없이, autolay : 홈페이지 로딩되자마자 자동재생, loop: 끝나면 처음으로 돌아가서 다시 재생 -->
+        <video id="media_h" class="intro_video" autoplay muted loop width="100%">
+            <source src="./images/FULL LIFE _도시브랜드 홍보영상(30초) .mp4" type="video/mp4" id="media_h" />
+        </video>
+        <div class="intro_text">
+            <h1>지금 우리동네는</h1>
+            <ul class="text1">
+                <a href="#"><li>#관악구</li></a>
+                <a href=""><li>#Food</li></a>
+                <a href="#"><li>#공원</li></a>
+            </ul>
+            <ul class="text2">
+                <a href="#"><li>#DIY</li></a>
+                <a href="#"><li>#가로수길</li></a>
+                <a href="#"><li>#핫플</li></a>
+            </ul>
+        </div>
+        
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+    <script src="./main.js"></script>
+</body>
+
+</html>
