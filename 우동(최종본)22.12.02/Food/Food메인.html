@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>우리 동네</title>
+  <link rel="stylesheet" href="Food메인.css" />
+      <!-- Link Swiper's CSS -->
+      <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+
+    <!-- Demo styles -->
+    <style>
+      html,
+      body {
+        position: relative;
+        height: 100%;
+      }
+
+      /* body {
+        
+        font-size: 14px;
+        color: #000;
+        margin: 0;
+        padding: 0;
+      } */
+
+      .swiper {
+        width: 100%;
+        height: 65%;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .swiper-slide a{
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    </style>
+</head>
+
+<body>
+  <!-- 헤더 -->
+  <nav class="navbar">
+    <div class="navbar_logo">
+        <a href="../main.html"><img src="../images/logo.png" width="150" height="50">
+          
+        </a>
+    </div>
+    <ul class="navbar_menu">
+        <a href="../Food/Food메인.html"><li>Food</li></a>
+        <a href="../Entertainment/Entertainment메인.html"><li>Entertainment</li></a>
+        <a href="../Story/story.html"><li>Story</li></a>
+    </ul>
+    <div class="SearchArea">
+<div class="SearchArea">
+  <form>
+      <!-- 검색창을 만들었으며, 그 안에 Search라는 단어를 넣음 -->
+      <input type="search" placeholder="Search">
+      <!-- <input type="image" src="../images/search.png"  width="20" height="alt"> -->
+      <button type="button"><img src="../images/search.png" alt=""></button>
+  </form>
+</div>
+    </div>
+<ul class="navbar_login">
+    <a href="../로그인/로그인카카오api.html"><li>로그인</li></a>
+    <a href="../회원가입/회원가입.html"><li>회원가입</li></a>
+</ul>
+    <a href="#" class="navbar_toggleBtn">
+        <img src="../images/menu_btn.png" width="30" height="20" color="white">
+    </a>
+
+</nav>
+  
+
+<!-- 메인이미지 스와이퍼-->
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"><img src="이미지들/모힝.jpg" alt="" /><div class="메인소개"><span class="큰소개글">이탈리아 본토의 맛 샤로수 최고의 맛집!</span><br><br><span class="작은소개글">모힝 - 서울특별시 관악구 남부순환로226길 36 2층
+     </span></div></div>
+    <div class="swiper-slide"><img src="./Food_sub/images_food_sub/cafe01.jpg" alt="" /><div class="메인소개"><span class="큰소개글">특별한 음료를 원하는 당신을 위한 카페</span><br><br><span class="작은소개글">씨크스페셜티-서울 관악구 관악로12길 45-12 1F</span></div></div>
+    <div class="swiper-slide"><img src="이미지들/짜장면.jpg" alt="" /><div class="메인소개"><span class="큰소개글">추워도 막을 수 없는 겨울 캠핑의 낭만</span><br><br><span class="작은소개글">겨울 특가 최대 76%할인</span></div></div>
+    <div class="swiper-slide"><img src="이미지들/떡볶이.jpg" alt="" /><div class="메인소개"><span class="큰소개글">추워도 막을 수 없는 겨울 캠핑의 낭만</span><br><br><span class="작은소개글">겨울 특가 최대 76%할인</span></div></div>
+    <div class="swiper-slide"><img src="이미지들/떡국.jpg" alt="" /><div class="메인소개"><span class="큰소개글">추워도 막을 수 없는 겨울 캠핑의 낭만</span><br><br><span class="작은소개글">겨울 특가 최대 76%할인</span></div></div>
+    <div class="swiper-slide"><img src="이미지들/제육.jpg" alt="" /><div class="메인소개"><span class="큰소개글">추워도 막을 수 없는 겨울 캠핑의 낭만</span><br><br><span class="작은소개글">겨울 특가 최대 76%할인</span></div></div>
+    <div class="swiper-slide"><img src="이미지들/커피3.jpg" alt=""><div class="메인소개"><span class="큰소개글">추워도 막을 수 없는 겨울 캠핑의 낭만</span><br><br><span class="작은소개글">겨울 특가 최대 76%할인</span></div></div>
+    <div class="swiper-slide"><img src="이미지들/커피1.jpg" alt=""><div class="메인소개"><span class="큰소개글">추워도 막을 수 없는 겨울 캠핑의 낭만</span><br><br><span class="작은소개글">겨울 특가 최대 76%할인</span></div></div>
+    
+  </div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-pagination"></div>
+</div>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    spaceBetween: 30,
+    centeredSlides: true,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+
+
+</script>
+
+
+  <!-- 우리 동네 맛집 -->
+
+ 
+    <h3 class="리뷰분류">우리 동네 맛집<a href="./Food_sub/list_food.html">더 보기</a></h3>
+
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper" style="padding-top: 50px;">
+        <div class="swiper-slide">
+          <section id="우동맛">
+          <a href="./Food_sub/list_detail_food01.html">
+          <img src="../Food/Food_sub/images_food_sub/food01.jpg" alt="장소" />
+          <div id="별점"><img src="이미지들/주황색 별점.png" alt="별" />4.68</div>
+          <div id="가게명">쥬벤쿠바</div>
+          <div></div>
+          <div id="메뉴">
+            <span class="메인메뉴">-메인 메뉴-</span><br />
+            <span class="메뉴들"> 파운드 폭립 플래터, 쿠바 샌드위치</span>
+          </div>
+          <br />
+          <div id="위치">서울 관악구 관악로14나길 10 1F</div>
+        </a>
+  
+        <a href="./Food_sub/list_detail_food02.html">
+          <img src="../Food/Food_sub/images_food_sub/food02.jpg" alt="장소" />
+          <div id="별점"><img src="이미지들/주황색 별점.png" alt="별" />4.73</div>
+          <div id="가게명">하와이 조개</div>
+          <div id="메뉴">
+            <span class="메인메뉴">-메인 메뉴-</span> <br />
+            <span class="메뉴들">하와이조개구이, 통가리비구이 </span>
+          </div>
+          <br />
+          <div id="위치">서울 관악구 신림로59길 15-6 1F</div>
+        </a>
+  
+        <a href="./Food_sub/list_detail_food03.html">
+          <img src="../Food/Food_sub/images_food_sub/food03.jpg" alt="장소" />
+          <div id="별점"><img src="이미지들/주황색 별점.png" alt="별" />4.51</div>
+          <div id="가게명">텐동 신텐</div>
+          <div></div>
+          <div id="메뉴">
+           <span class="메인메뉴">-메인 메뉴-</span> <br>
+           <span class="메뉴들">닭꼬치텐동, 스페셜텐동, 신텐</span>
+          </div>
+          <br />
+          <div id="위치">서울특별시 관악구 봉천로6길 36 1F</div>
+        </a>
+  
+        <a href="./Food_sub/list_detail_food01.html">
+          <img src="이미지들/스테이크.jpg" alt="장소" />
+          <div id="별점"><img src="이미지들/주황색 별점.png" alt="별" />4.81</div>
+          <div id="가게명">아드뷔 드</div>
+          <div id="메뉴">
+            <span class="메인메뉴">-메인 메뉴-</span> <br />
+            <span class="메뉴들">포크 스테이크, 로제 파스타</span>
+          </div>
+          <br />
+          <div id="위치">서울 관악구 신림로65길 42</div>
+        </a>
+  
+        <a href="./Food_sub/list_detail_food02.html">
+          <img src="이미지들/떡볶이.jpg" alt="장소" />
+          <div id="별점"><img src="이미지들/주황색 별점.png" alt="별" />4.72</div>
+          <div id="가게명">관악 마늘 떡볶이</div>
+          <div id="메뉴">
+            <span class="메인메뉴">-메인 메뉴-</span> <br />
+            <span class="메뉴들">매콤 / 마늘 / 알리오 떡볶이 </span>
+          </div>
+          <br />
+          <div id="위치">서울 관악구 신림로65길 42</div>
+        </a>
+  
+        <a href="./Food_sub/list_detail_food03.html">
+          <img src="이미지들/고기덮밥.jpg" alt="장소" />
+          <div id="별점"><img src="이미지들/주황색 별점.png" alt="별" />4.24</div>
+          <div id="가게명">한느</div>
+          <div id="메뉴">
+            <span class="메인메뉴">-메인 메뉴-</span> <br />
+            <span class="메뉴들">돼지고기 덮밥, 소고기 덮밥</span>
+          </div>
+          <br />
+          <div id="위치">서울특별시 관악구 봉천동 1591-2</div>
+        </a> 
+      </section></div>
+        <div class="swiper-slide"><section id="우동맛">
+          <a href="./Food_sub/list_detail_food01.html">
+          <img src="이미지들/짜장면.jpg" alt="장소" />
+          <div id="별점"><img src="이미지들/주황색 별점.png" alt="별" />4.8</div>
+          <div id="가게명">한느</div>
+          <div></div>
+          <div id="메뉴">
+            <span class="메인메뉴">-메인 메뉴-</span> <br />
+            <span class="메뉴들">돼지고기 덮밥, 소고기 덮밥</span>
+          </div>
+          <br />
+          <div id="위치">서울 관악구 신림로65길 42</div>
+        </a>
+  
+        <a href="./Food_sub/list_detail_food02.html">
+          <img src="이미지들/제육.jpg" alt="장소" />
+          <div id="별점"><img src="이미지들/주황색 별점.png" alt="별" />3.8</div>
+          <div id="가게명">관악 마늘 떡볶이</div>
+          <div id="메뉴">
+            <span class="메인메뉴">-메인 메뉴-</span> <br />
+            <span class="메뉴들">매콤 / 마늘 / 알리오 떡볶이 </span>
+          </div>
+          <br />
+          <div id="위치">서울 관악구 신림로65길 42</div>
+        </a>
+  
+        <a href="./Food_sub/list_detail_food03.html">
+          <img src="이미지들/떡볶이.jpg" alt="장소" />
+          <div id="별점"><img src="이미지들/주황색 별점.png" alt="별" />3.8</div>
+          <div id="가게명">아드뷔 드</div>
+          <div></div>
+          <div id="메뉴">
+            <span class="메인메뉴">-메인 메뉴-</span> <br />
+            <span class="메뉴들">포크 스테이크, 로제 파스타</span>
+          </div>
+          <br />
+          <div id="위치">서울 관악구 신림로65길 42</div>
+        </a>
+  
+        <a href="./Food_sub/list_detail_food01.html">
+          <img src="이미지들/떡국.jpg" alt="장소" />
+          <div id="별점"><img src="이미지들/주황색 별점.png" alt="별" />3.8</div>
+          <div id="가게명">텐동 신텐</div>
+          <div id="메뉴">
+            <span class="메인메뉴">-메인 메뉴-</span> <br />
+            <span class="메뉴들">돼지고기 덮밥, 소고기 덮밥</span>
+          </div>
+          <br />
+          <div id="위치">서울 관악구 신림로65길 42</div>
+        </a>
+  
+        <a href="./Food_sub/list_detail_food02.html">
+          <img src="이미지들/고기덮밥.jpg" alt="장소" />
+          <div id="별점"><img src="이미지들/주황색 별점.png" alt="별" />3.8</div>
+          <div id="가게명">하와이 조개</div>
+          <div id="메뉴">
+            <span class="메인메뉴">-메인 메뉴-</span> <br />
+            <span class="메뉴들">포크 스테이크, 로제 파스타</span>
+          </div>
+          <br />
+          <div id="위치">서울 관악구 신림로65길 42</div>
+        </a>
+  
+        <a href="./Food_sub/list_detail_food03.html">
+          <img src="이미지들/제육.jpg" alt="장소" />
+          <div id="별점"><img src="이미지들/주황색 별점.png" alt="별" />3.8</div>
+          <div id="가게명">관악 마늘 떡볶이</div>
+          <div id="메뉴">
+            <span class="메인메뉴">-메인 메뉴-</span> <br />
+            <span class="메뉴들">매콤 / 마늘 / 알리오 떡볶이 </span>
+          </div>
+          <br />
+          <div id="위치">서울 관악구 신림로65길 42</div>
+        </a> 
+      </section></div>
+        <div class="swiper-slide"><section id="우동맛">
+          <a href="./Food_sub/list_detail_food01.html">
+          <img src="../Food/Food_sub/images_food_sub/food01.jpg" alt="장소" />
+          <div id="별점"><img src="이미지들/주황색 별점.png" alt="별" />4.68</div>
+          <div id="가게명">쥬벤쿠바</div>
+          <div></div>
+          <div id="메뉴">
+            <span class="메인메뉴">-메인 메뉴-</span><br />
+            <span class="메뉴들"> 파운드 폭립 플래터, 쿠바 샌드위치</span>
+          </div>
+          <br />
+          <div id="위치">서울 관악구 관악로14나길 10 1F</div>
+        </a>
+  
+
+        <a href="./Food_sub/list_detail_food02.html">
+          <img src="../Food/Food_sub/images_food_sub/food02.jpg" alt="장소" />
+          <div id="별점"><img src="이미지들/주황색 별점.png" alt="별" />4.73</div>
+          <div id="가게명">하와이 조개</div>
+          <div id="메뉴">
+            <span class="메인메뉴">-메인 메뉴-</span> <br />
+            <span class="메뉴들">하와이조개구이, 통가리비구이 </span>
+          </div>
+          <br />
+          <div id="위치">서울 관악구 신림로59길 15-6 1F</div>
+        </a>
+  
+
+        <a href="./Food_sub/list_detail_food03.html">
+          <img src="../Food/Food_sub/images_food_sub/food03.jpg" alt="장소" />
+          <div id="별점"><img src="이미지들/주황색 별점.png" alt="별" />4.51</div>
+          <div id="가게명">텐동 신텐</div>
+          <div></div>
+          <div id="메뉴">
+           <span class="메인메뉴">-메인 메뉴-</span> <br>
+           <span class="메뉴들">닭꼬치텐동, 스페셜텐동, 신텐</span>
+          </div>
+          <br />
+          <div id="위치">서울특별시 관악구 봉천로6길 36 1F</div>
+        </a>
+
+  
+        <a href="./Food_sub/list_detail_food01.html">
+          <img src="이미지들/스테이크.jpg" alt="장소" />
+          <div id="별점"><img src="이미지들/주황색 별점.png" alt="별" />4.81</div>
+          <div id="가게명">아드뷔 드</div>
+          <div id="메뉴">
+            <span class="메인메뉴">-메인 메뉴-</span> <br />
+            <span class="메뉴들">포크 스테이크, 로제 파스타</span>
+          </div>
+          <br />
+          <div id="위치">서울 관악구 신림로65길 42</div>
+        </a>
+  
+
+        <a href="./Food_sub/list_detail_food02.html">
+          <img src="이미지들/떡볶이.jpg" alt="장소" />
+          <div id="별점"><img src="이미지들/주황색 별점.png" alt="별" />4.72</div>
+          <div id="가게명">관악 마늘 떡볶이</div>
+          <div id="메뉴">
+            <span class="메인메뉴">-메인 메뉴-</span> <br />
+            <span class="메뉴들">매콤 / 마늘 / 알리오 떡볶이 </span>
+          </div>
+          <br />
+          <div id="위치">서울 관악구 신림로65길 42</div>
+        </a>
+  
+
+        <a href="./Food_sub/list_detail_food03.html">
+          <img src="이미지들/고기덮밥.jpg" alt="장소" />
+          <div id="별점"><img src="이미지들/주황색 별점.png" alt="별" />4.24</div>
+          <div id="가게명">한느</div>
+          <div id="메뉴">
+            <span class="메인메뉴">-메인 메뉴-</span> <br />
+            <span class="메뉴들">돼지고기 덮밥, 소고기 덮밥</span>
+          </div>
+          <br />
+          <div id="위치">서울특별시 관악구 봉천동 1591-2</div>
+        </a>  </section></div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+          delay: 200000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+  <!-- 리뷰 -->
+
+  <section id="우동맛" style="padding: 0px;">
+    <h3  class="리뷰분류" style="margin-bottom: 35px;">Story<a href="../Story/story.html">더 보기</a></h3>
+
+    <a href="../Story/story_detail2.html">
+      <img src="../Food/Food_sub/image_food_detail_cafe/사담_헤더_02.jpg" alt="제육" />
+      <div id="별점"><img src="이미지들/주황색 별점.png" alt="별" />3.8</div>
+      <div id="가게명">드 뷜레</div>
+      <div></div>
+      <div id="메뉴">
+        매우 맛있네요 두번 세번 추천합니다. 특히 제육 맛집!!!
+      </div>
+      <br />
+      <br />
+      <div id="위치">서울 관악구 신림로65길 42</div>
+    </a>
+
+    <a href="../Story/story_detail2.html">
+      <img src="../Food/Food_sub/image_food_detail_cafe/온고지신_메뉴_01.jpg" alt="스테이크" />
+      <div id="별점"><img src="이미지들/주황색 별점.png" alt="별" />3.8</div>
+      <div id="가게명">도담도담</div>
+      <div id="메뉴">
+       아니 여기 뭐죠 숨은 맛집!!! 꼭 한번 와보세요! 사장님도 친절하십니다
+      </div>
+      <br />
+      <br />
+      <div id="위치">서울 관악구 신림로65길 42</div>
+    </a>
+
+    <a href="../Story/story_detail2.html">
+      <img src="../Food/Food_sub/image_food_detail_cafe/씨크스페셜티_메뉴_04.jpg" alt="고기덮밥" />
+      <div id="별점"><img src="이미지들/주황색 별점.png" alt="별" />3.8</div>
+      <div id="가게명">커피 맛있는 집</div>
+      <div></div>
+      <div id="메뉴">
+       버터바 안드셔본 분은 여기서 버터바 먹어보시면 신세곕니다!!!
+      </div>
+      <br /><br />
+      <div id="위치">서울 관악구 신림로65길 42</div>
+    </a>
+  </section>
+
+  <!-- 신규 가게 -->
+
+  <section id="신규" >
+    <h3  class="리뷰분류">신규 음식점<a href="../Food/Food_sub/list_food.html">더 보기</a></h3>
+
+    <a href="./Food_sub/list_detail_food01.html">
+      <div class="신규가게사진"><img src="이미지들/팔공.jpg" alt=""></div>
+      <div class="new"><span>new!</span></div>
+      <div class="가게정보"><span class="가게이름">팔공</span> <br /><span class="음식분류">중식</span><span class="위치"> - 서울 관악구 남부순환로 1680</span></div>
+    </a>
+
+    <a href="./Food_sub/list_detail_food02.html">
+      <div class="신규가게사진">
+        <img src="이미지들/모힝.jpg" alt="스테이크" />
+      </div>
+      <div class="new"><span>new!</span></div>
+      <div class="가게정보"><span class="가게이름">모힝</span><br /><span class="음식분류">이탈리안 음식</span><span class="위치"> - 서울특별시 관악구 남부순환로226길 36 2층</span></div>
+    </a>
+
+    <a href="./Food_sub/list_detail_food03.html">
+      <div class="신규가게사진">
+        <img src="이미지들/로향양꼬치.png" alt="">
+      </div>
+      <div class="new"><span>new!</span></div>
+      <div class="가게정보"><span class="가게이름">로향 양꼬치</span><br /><span class="음식분류">중식</span><span class="위치"> - 서울 관악구 신림로65길 42</span></div>
+    </a>
+  </section>
+
+    <!-- 카페 추천 -->
+
+    <section id="우동맛" >
+      <h3 class="리뷰분류" style="margin-bottom: 35px;">카페 추천<a href="../food/Food_sub/list_cafe.html">더 보기</a></h3>
+  
+      <a href="../Food/Food_sub/list_detail_cafe01.html">
+        <img src="../food/Food_sub/image_food_detail_cafe/씨크스페셜티_메뉴_01.jpg" alt="제육" />
+        <div id="별점"><img src="이미지들/주황색 별점.png" alt="별" />4.91</div>
+        <div id="가게명">씨크스페셜티</div>
+        <div></div>
+        <div id="메뉴">
+          <div class="메인메뉴">-메인 메뉴-</div>
+         
+          크림달구마, 옥수슈페너,<br>
+          티라미슈페너, 버터바
+          <br>
+          
+        </div>
+      <br> 
+       
+        <div id="위치">서울 관악구 관악로12길 45-12 1F</div>
+      </a>
+  
+      <a href="../Food/Food_sub/list_detail_cafe02.html">
+        <img src="../food/Food_sub/image_food_detail_cafe/사담_메뉴_01.jpg" alt="스테이크" />
+        <div id="별점"><img src="이미지들/주황색 별점.png" alt="별" />4.72</div>
+        <div id="가게명">사담</div>
+        <div id="메뉴">
+          <div class="메인메뉴">-메인 메뉴-</div>
+          베리콩포트, 햄치즈<br>
+          새우에그, 훈제연어
+        </div>
+        <br />
+        <div id="위치">서울 관악구 남부순환로 1852 5F</div>
+      </a>
+  
+      <a href="../Food/Food_sub/list_detail_cafe03.html">
+        <img src="../food/Food_sub/image_food_detail_cafe/온고지신_메뉴_04.jpg" alt="고기덮밥" />
+        <div id="별점"><img src="이미지들/주황색 별점.png" alt="별" />3.8</div>
+        <div id="가게명">온고지신</div>
+        <div></div>
+        <div id="메뉴">
+          <div class="메인메뉴">-메인 메뉴-</div>
+          밀크티, 블렌딩티 <br>
+          티에이드, 온고한상
+        </div>
+        <br />
+        <div id="위치">서울 관악구 관악로14길 101</div>
+      </a>
+  
+    </section>
+    <script>
+      // 변수선언
+const toggleBtn = document.querySelector('.navbar_toggleBtn');
+const menu = document.querySelector('.navbar_menu');
+const login = document.querySelector('.navbar_login');
+
+// navbtn을 클릭할때마다 아래함수들를 호출
+toggleBtn.addEventListener('click', () => {
+    menu.classList.toggle('active');
+    login.classList.toggle('active');
+});
+
+    </script>
+    <footer>
+      <img src="../images/footer.png " width="200" height="150">
+      <br><p style="color:aliceblue; font-size: 20px;">
+      TEL. +82-2-123-4567 | FAX. 0123.456.7890 | MAIL. abcd123@naver.com</br>
+      ADDRESS. 서울특별시 관악구 봉천로 227. 보라매샤르망 505호<br>
+      CEO.저장해 | 사업자등록번호 : 0987-65-4321<br>
+      <hr>
+      Copyright ⓒ All Rights Reserved / published by 저장해조_design
+      </p>
+  </footer>
+</body>
+
+</html>

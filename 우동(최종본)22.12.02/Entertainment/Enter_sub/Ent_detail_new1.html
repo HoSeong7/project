@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>우리 동네 핫플 #서울시립 남서울미술관</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/Ent_detail.css">
+
+    <!-- 지도 api -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script> <!-- 특정 함수를 지원 않는 웹에서도 구현되도록 -->
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar_logo">
+            <a href="../../main.html"><img src="../../images/logo.png" width="150" height="50">
+          
+            </a>
+        </div>
+        <ul class="navbar_menu">
+            <a href="../../Food/Food메인.html"><li>Food</li></a>
+            <a href="../Entertainment메인.html"><li>Entertainment</li></a>
+            <a href="../../Story/story.html"><li>Story</li></a>
+        </ul>
+        <div class="SearchArea">
+  <div class="SearchArea">
+      <form>
+          <!-- 검색창을 만들었으며, 그 안에 Search라는 단어를 넣음 -->
+          <input type="search" placeholder="Search">
+          <button type="button"><img src="../../images/search.png" alt=""></button>
+      </form>
+  </div>
+        </div>
+    <ul class="navbar_login">
+        <a href="../../로그인/로그인카카오api.html"><li>로그인</li></a>
+        <a href="../../회원가입/회원가입.html"><li>회원가입</li></a>
+    </ul>
+        <a href="#" class="navbar_toggleBtn">
+            <img src="../../images/menu_btn.png" width="30" height="20" color="white">
+        </a>
+    
+    </nav>
+    <!-- 내용 시작 -->
+    <section class="outline">
+        <h1 class="title">가볍게 보기 좋은 무료 전시 : 서울시립 남서울미술관 </h1><br>
+
+        <div class="user">
+            <div class="box">
+                <img class="profile" src="profile_images/user.png">
+            </div>
+            <p>라폴리에</p>
+        </div>
+        <br>
+        <div class="post-date">s
+            <span>작성일 : 2022.11.30</span>
+        </div><br>
+
+        <!-- 게시글 이미지 -->
+        <div><img class="icon" src="images/museum.png"></div>
+        <p class="head-title">#서울시립 남서울미술관</p>
+        <img class="post_img" src="images/SeMA4.jpg">
+
+        <div class="text-box">
+            <p class="bold-text">미술관이 된 구 벨기에 영사관</p>
+            <p class="maintext">
+                남서울미술관은 역사의 정취가 가득한, 오래 머물고 싶은 미술관입니다.
+                미술관이 둥지를 튼 이곳은 대한제국(1897~1910) 시절
+                벨기에 영사관으로 사용된 건물(사적 제254호)로, 1905년 회현동에 준공되어
+                1983년 지금의 남현동으로 옮겨졌습니다.
+                길게 뻗은 복도를 중심으로 양옆으로 자유롭게 배열된 두 개 층의 방들에서는
+                다양한 층위의 관람객에 특화된 공공 프로그램을 소개합니다.
+            </p>
+            <p class="hashtag">
+                #남서울시립미술관 #무료전시회 #벨기에영사관 #사적건축물
+            </p>
+        </div>
+
+        <div class="subImgBox">
+            <img src="images/Sema_art1.jpg" width="300px" height="200px">
+            <img src="images/Sema_art2.jpg" width="300px" height="200px">
+        </div>
+
+        <div class="info">
+            <p><img src="images/time.png"> 운영시간: 10:00 - 20:00 (월요일 정기휴무) </p>
+            <p><img src="images/map.png"> 주소: 서울 관악구 남부순환로 2076 </p>
+            <p><img src="images/phone.png"> 문의: 02-598-6246 </p>
+            <p><img src="images/web.png"> 홈페이지: https://sema.seoul.go.kr/ </p>
+        </div>
+
+        <!-- 주소 복사 코드 -->
+        <h3>위치 정보</h3>
+        <p class="box01">
+            <div><button onclick="copy_to_clipboard()" id="copy-btn">
+                    <img src="images/copy.svg" id="copy-img">
+                </button>
+                <input id="addr" value="서울 관악구 남부순환로 2076" readonly
+                width="350px">
+            </div>
+        </p>
+        
+        <script>
+            function copy_to_clipboard() {
+                var copyText = document.getElementById('addr');
+                copyText.select();
+                copyText.setSelectionRange(0, 99999);
+                document.execCommand("Copy");
+                alert('주소가 복사되었습니다');
+            }
+        </script>
+
+
+        <!-- 지도 삽입 -->
+        <div id="map" style="width:600px; height: 400px;"></div>
+
+        <script src="https://maps.googleapis.com/maps/api/js?key=
+                    AIzaSyDNbJOMOPB051Hq9g7cemYEYFt7KrZrxok
+                    &callback=initMap&v=weekly" defer>
+        </script>
+
+        <!-- 지도 스크립트 -->
+        <script>
+            function initMap() {
+                const seoul = {
+                    lat: 37.4761313,
+                    lng: 126.9795938
+                };
+                const map = new google.maps.Map(document.getElementById("map"), {
+                    zoom: 15,
+                    center: seoul,
+                });
+                const marker = new google.maps.Marker({
+                    position: seoul,
+                    map: map,
+                });
+            }
+            window.initMap = initMap;
+        </script>
+        <br>
+    </section>
+    <script>
+        // 변수선언
+const toggleBtn = document.querySelector('.navbar_toggleBtn');
+const menu = document.querySelector('.navbar_menu');
+const login = document.querySelector('.navbar_login');
+
+// navbtn을 클릭할때마다 아래함수들를 호출
+toggleBtn.addEventListener('click', () => {
+    menu.classList.toggle('active');
+    login.classList.toggle('active');
+});
+
+    </script>
+    <footer>
+        <img src="../../images/footer.png " width="200" height="150">
+        <br><p style="color:aliceblue; font-size: 20px;">
+        TEL. +82-2-123-4567 | FAX. 0123.456.7890 | MAIL. abcd123@naver.com</br>
+        ADDRESS. 서울특별시 관악구 봉천로 227. 보라매샤르망 505호<br>
+        CEO.저장해 | 사업자등록번호 : 0987-65-4321<br>
+        <hr>
+        Copyright ⓒ All Rights Reserved / published by 저장해조_design
+        </p>
+    </footer>
+</body>
+
+</html>

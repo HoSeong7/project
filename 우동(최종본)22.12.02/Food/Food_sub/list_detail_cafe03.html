@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>저장해: 연말에도 카페 투어할 준비 됐나? </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/list_detail.css" />
+
+    <!-- 지도 api -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script> <!-- 특정 함수를 지원 않는 웹에서도 구현되도록 -->
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar_logo">
+            <a href="../../main.html"><img src="../../images/logo.png" width="150" height="50">
+          
+            </a>
+        </div>
+        <ul class="navbar_menu">
+            <a href="../Food메인.html"><li>Food</li></a>
+            <a href="../../Entertainment/Entertainment메인.html"><li>Entertainment</li></a>
+            <a href="../../Story/story.html"><li>Story</li></a>
+        </ul>
+        <div class="SearchArea">
+  <div class="SearchArea">
+      <form>
+          <!-- 검색창을 만들었으며, 그 안에 Search라는 단어를 넣음 -->
+          <input type="search" placeholder="Search">
+          <button type="button"><img src="../../images/search.png" alt=""></button>
+      </form>
+  </div>
+        </div>
+    <ul class="navbar_login">
+        <a href="../../로그인/로그인카카오api.html"><li>로그인</li></a>
+        <a href="../../회원가입/회원가입.html"><li>회원가입</li></a>
+    </ul>
+        <a href="#" class="navbar_toggleBtn">
+            <img src="../../images/menu_btn.png" width="30" height="20" color="white">
+        </a>
+    
+    </nav>
+    <!-- Swiper , 첫 화면에서 보여지는 이미지-->
+    <section id="food">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="./image_food_detail_cafe/온고지신_헤더_01.jpg" alt="온고지신">
+                    <img src="./image_food_detail_cafe/온고지신_헤더_02.jpg" alt="온고지신">
+                </div>
+                <div class="swiper-slide">
+                    <img src="./image_food_detail_cafe/온고지신_헤더_03.jpeg" alt="온고지신">
+                    <img src="./image_food_detail_cafe/온고지신_헤더_04.jpeg" alt="온고지신">
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section><br>
+
+    <section id="첫번째">
+        <div class="intro">
+            <p class="intro1">옛것을 익히고 그것을 미루어서 새것을 앎</p>
+            <p class="intro2">Special_Tea&nbsp;|&nbsp;<span>신림동</span></p>
+            <p class="intro3"><img src="./images_icon/map.svg" width="20" height="20">
+                서울 관악구 관악로14길 101
+            </p>
+        </div>
+    </section>
+
+    <section id="두번째">
+        <div class="host">
+            <p class="host1">HOST</p>
+            <P class="host2">온고지신</P>
+            <div class="host3">
+                <p>어렵고 멀게만 느껴졌던 차문화를 조금 더 쉽고 편안하게 다가갈 수 있도록 노력합니다</p>
+                <p>온고지신의 모든 차는 남녀 노소 누구나 쉽게 즐길수 있도록 블렌딩 하였습니다.</p>
+                <p>은은한 향으로 차를 즐기고 몸으로 퍼지는 온기를 느껴보세요.</p>
+                <p>각각 옛것과 현대적인 것을 의미하는 두 개의 원들이 교집합을 이루고 있습니다</p>
+                <p>옛것과 현대가 공존하는 온고지신에서 다양한 블렌딩 티와 밀크디, 시그니처 디저트들을 만나보세요!</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="세번째">
+        <div class="menu">
+            <div class="menu1">
+                <div class="menu2">
+                    <p>MENU</p>
+                </div>
+                <div id="menu3">
+                    <div class="메뉴사진">
+                        <img src="./image_food_detail_cafe/온고지신_메뉴_01.jpg" width="30%" alt="">
+                        <div class="메뉴판">
+                            <span class="메뉴명">밀크티</span><br>
+                            <span class="금액">6,000원</span><br>
+                        </div>
+                    </div>
+                    <div class="메뉴사진">
+                        <img src="./image_food_detail_cafe/온고지신_메뉴_02.jpg" width="30%" alt="">
+                        <div class="메뉴판">
+                            <span class="메뉴명">블렌딩티</span><br>
+
+                            <span class="금액">5,000원</span><br>
+                        </div>
+                    </div>
+                    <div class="메뉴사진">
+                        <img src="./image_food_detail_cafe/온고지신_메뉴_03.jpeg" width="30%" alt="">
+                        <div class="메뉴판">
+                            <span class="메뉴명">티에이드</span><br>
+                            <span class="금액">6,500원</span><br>
+                        </div>
+                    </div>
+                    <div class="메뉴사진">
+                        <img src="./image_food_detail_cafe/온고지신_메뉴_04.jpg" width="30%" alt="">
+                        <div class="메뉴판">
+                            <span class="메뉴명">온고한상</span><br>
+                            <span class="금액">12,000원</span><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><br>
+
+
+
+
+    <section id="네번째">
+        <div class="map">
+            <p class="map1">위치 정보</p>
+            <P class="map2"><span>서울 관악구 관악로14길 101</span><br>
+                <input id="addr" value="서울특별시 관악구 봉천동 1620-32" readonly style="border: #fff;">
+            </P>
+            <div class="map3">
+                <img src="./images_icon/copy.svg" width="30" height="30">
+                <button class="map_btn" onclick="copy_to_clipboard()">
+                    매장 주소 복사하기</button>
+
+                <!-- 주소 복사 스크립트 -->
+                <script>
+                    function copy_to_clipboard() {
+                        var copyText = document.getElementById('addr');
+                        copyText.select();
+                        copyText.setSelectionRange(0, 99999);
+                        document.execCommand("Copy");
+                        alert('주소가 복사되었습니다');
+                    }
+                </script>
+
+                <!-- 지도 삽입 -->
+                <br>
+                <br>
+                <div id="map_location">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 지도 스크립트 -->
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNbJOMOPB051Hq9g7cemYEYFt7KrZrxok&callback=initMap&v=weekly"
+        defer></script>
+    <script>
+        function initMap() {
+            const seoul = {
+                lat: 37.4798571,
+                lng: 126.9555667
+            };
+            const map = new google.maps.Map(document.getElementById("map_location"), {
+                zoom: 15,
+                center: seoul,
+            });
+            const marker = new google.maps.Marker({
+                position: seoul,
+                map: map,
+            });
+        }
+        window.initMap = initMap;
+    </script>
+    <br>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            pagination: {
+                el: ".swiper-pagination",
+                dynamicBullets: true,
+            },
+        });
+    </script>
+    <script>
+        // 변수선언
+        const toggleBtn = document.querySelector('.navbar_toggleBtn');
+        const menu = document.querySelector('.navbar_menu');
+        const login = document.querySelector('.navbar_login');
+
+        // navbtn을 클릭할때마다 아래함수들를 호출
+        toggleBtn.addEventListener('click', () => {
+            menu.classList.toggle('active');
+            login.classList.toggle('active');
+        });
+    </script>
+    <footer>
+        <img src="../../images/footer.png " width="200" height="150">
+        <br><p style="color:aliceblue; font-size: 20px;">
+        TEL. +82-2-123-4567 | FAX. 0123.456.7890 | MAIL. abcd123@naver.com</br>
+        ADDRESS. 서울특별시 관악구 봉천로 227. 보라매샤르망 505호<br>
+        CEO.저장해 | 사업자등록번호 : 0987-65-4321<br>
+        <hr>
+        Copyright ⓒ All Rights Reserved / published by 저장해조_design
+        </p>
+    </footer>
+</body>
+
+</html>

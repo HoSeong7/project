@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"-->
+<!--            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"-->
+<!--            crossorigin="anonymous"></script>-->
+    <meta name="viewport"
+          content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width"/>
+    <title>명소 상세</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <!--버튼스타일-->
+    <style>
+        @keyframes ring {
+            0% {
+                width: 30px;
+                height: 30px;
+                opacity: 1;
+            }
+            100% {
+                width: 300px;
+                height: 300px;
+                opacity: 0;
+            }
+        }
+        .w-btn-neon2 {
+            position: relative;
+            border: none;
+            min-width: 200px;
+            min-height: 50px;
+            background: linear-gradient(
+                    90deg,
+                    rgba(129, 230, 217, 1) 0%,
+                    rgba(79, 209, 197, 1) 100%
+            );
+            border-radius: 1000px;
+            color: darkslategray;
+            cursor: pointer;
+            box-shadow: 12px 12px 24px rgba(79, 209, 197, 0.64);
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .w-btn-neon2:hover {
+            transform: scale(1.2);
+        }
+
+        .w-btn-neon2:hover::after {
+            content: "";
+            width: 30px;
+            height: 30px;
+            border-radius: 100%;
+            border: 6px solid #00ffcb;
+            position: absolute;
+            z-index: -1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: ring 1.5s infinite;
+        }
+    </style>
+    <!--카드스타일-->
+    <style>
+        /*html, body, div, span, applet, object, iframes, h1, h2, h3, h4, h5, h6,*/
+        /*p, blockquote, pre, a, abbr, acronym, address, big, quotes, code, del,*/
+        /*dfn, em, img, ins, kbd, q, s, samp, small, strike, sub, sup, tt, var, u,*/
+        /*i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table,*/
+        /*caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas,*/
+        /*details, embed, figure, figcaption, footer, header, hgroup, menu, nav,*/
+        /*output, ruby, section, summary, time, mark, audio, video {*/
+        /*    margin: 0;*/
+        /*    padding: 0;*/
+        /*    border: 0;*/
+        /*    font-size: 100%;*/
+        /*    do: inherit;*/
+        /*    vertical-align: baseline;*/
+        /*}*/
+
+
+        article, aside, details, figcaption, figure, footer, header, hgroup,
+        menu, nav, section {
+            display: block;
+        }
+
+        blockquote, q {
+            quotes: none;
+        }
+
+        blockquote:before, blockquote:after, q:before, q:after {
+            content: '';
+            content: none;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        /*css 초기화*/
+        .card {
+            height: 400px;
+            width: 350px;
+            border-radius: 15px;
+            display: inline-block;
+            /*margin-top: 30px;*/
+            /*margin-left: 30px;*/
+            margin-bottom: 30px;
+            position: relative;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            overflow: hidden;
+
+
+        }
+
+        .card-header {
+            -webkit-transition: 0.5s; /*사파리 & 크롬*/
+            -moz-transition: 0.5s; /*파이어폭스*/
+            -ms-transition: 0.5s; /*인터넷 익스플로러*/
+            -o-transition: 0.5s; /*오페라*/
+            transition: 0.5s;
+            width: 100%;
+            height: 270px;
+            border-radius: 15px 15px 0 0;
+            background-image: url("famous.jpg");
+            background-size: 100% 280px;
+            background-repeat: no-repeat;
+        }
+
+
+        .card:hover .card-header {
+            opacity: 0.8;
+            height: 100px;
+        }
+
+
+        .card-header-is_closed {
+            background-color: #EF5A31;
+            color: #FFF;
+            font-weight: bold;
+            text-align: center;
+            float: right;
+            margin: 15px 15px 0 0;
+            border-radius: 50%;
+            font-weight: bold;
+            padding: 10px 10px;
+            line-height: 20px;
+        }
+
+        h1 {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+
+        .card-body {
+
+        }
+
+
+        .card-body-header {
+            line-height: 25px;
+            margin: 10px 20px 0px 20px;
+        }
+
+
+        .card-body-description {
+            opacity: 0;
+            color: #757B82;
+            line-height: 25px;
+            -webkit-transition: .2s ease-in-out; /*사파리&크롬*/
+            -moz-transition: .2s ease-in-out; /*파이어폭스*/
+            -ms-transition: .2s ease-in-out; /*익스플로러*/
+            -o-transition: .2s ease-in-out; /*오페라*/
+            transition: .2s ease-in-out;
+            overflow: hidden;
+            height: 180px;
+            margin: 5px 20px;
+        }
+
+
+        .card:hover .card-body-description {
+            opacity: 1;
+            -webkit-transition: .5s ease-in-out;
+            -moz-transition: .5s ease-in-out;
+            -ms-transition: .5s ease-in-out;
+            -o-transition: .5s ease-in-out;
+            transition: .5s ease-in-out;
+            overflow: scroll;
+        }
+
+
+        .card-body-hashtag {
+            color: #2478FF;
+            font-style: italic;
+        }
+
+
+        .card-body-footer {
+            position: absolute;
+            margin-top: 15px;
+            margin-bottom: 6px;
+            bottom: 0;
+            width: 314px;
+            font-size: 14px;
+            color: #9FA5A8;
+            padding: 0 15px;
+        }
+
+
+        .icon {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 2px;
+        }
+
+
+        .icon-view_count {
+            width: 25px;
+            height: 17px;
+            background: url("images/eye.jpg") no-repeat;
+        }
+
+
+        .icon-comments_count {
+            margin-left: 5px;
+            width: 25px;
+            height: 17px;
+            background: url("images/comment.jpg") no-repeat;
+        }
+
+
+        .reg_date {
+            float: right;
+        }
+    </style>
+    <!--navigation css 부분-->
+    <style>
+
+        * {
+            /* 리스트 볼릿을 없애기 */
+            list-style: none;
+            /* 링크 밑줄없애기 */
+            text-decoration: none;
+            /* 테이블의 따로있던선을 붙여준다. */
+            border-collapse: collapse;
+            /* 기본적으로 씌여있던 마진과 패딩을 없앤다. */
+            margin: 0px;
+            padding: 0px;
+            color: #000;
+            font-size: 14px;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        .navbar a {
+            color: rgba(9, 19, 16, 0.782);
+            text-decoration: none;
+        }
+
+        /* <-- navbar -->
+           display : flex; 목록들을 가로로 나란히 나열시킴
+           jsstify-content : space-between; 박스 사이 빈 공간을 넣어준다.
+           align-items : center는 navbar;에 있는 박스들을 navbar내에서 가운대 정렬
+           padding : 8px 12px navbar;에 공백은 위아래8px, 양 옆12px를 넣어 바짝 붙는 것을 방지시켰다.
+           position:sticky; top:0; 으로 스크롤을 내릴때 고정적으로 같이 내려오도록 설정
+           box-shadow : 1px 2px 3px gray;는 x축1px y축2px 번짐3px을 이용해 네비가 모든 layout-box위에 있는것처럼 효과를 넣어줬다.
+           */
+        .navbar {
+            background-color: rgba(251, 255, 246, 0.732);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 12px;
+            position: sticky;
+            top: 0;
+            box-shadow: 1px 2px 3px gray;
+
+        }
+
+        .navbar_logo {
+            font-size: 24px;
+        }
+
+        /* display : flex;로 메뉴 목록들을 가로로 위치하도록 변경
+           padding:left:0; 으로 지정해 공백이 생기는것을 방지
+         */
+        .navbar_menu {
+            display: flex;
+            padding-left: 0;
+        }
+
+        /* padding : 8px 12px;로 각 메뉴마다 공간을 줬음. */
+        .navbar_menu li {
+            padding: 8px 12px;
+
+        }
+
+        /* 마우스를 올릴시
+          color : 그린색
+          border-radius: 4px로 박스를 둥글게해줌 */
+        .navbar_menu li:hover {
+            /*background-color: rgba(129, 187, 67, 0.745);*/
+            border-radius: 4px;
+        }
+
+        /* flex박스로 만들어 가로로 나열 */
+        .navbar_login {
+            display: flex;
+            /* padding-left: 10px; */
+
+        }
+
+        /* border-right : 2px solid gray; 로그인과 회원가입 오른쪽에 구분선 표시 */
+        .navbar_login li {
+            padding: 2.5px 10px 2.5px 10px;
+            border-right: 2px solid gray;
+        }
+
+        /* last-chile { border: none }로 회원가입 리스트를 지정 후 오른쪽에 표기되있던 선을 없앤다. */
+        .navbar_login li:last-child {
+            border: none;
+        }
+
+        /* position:absolute; 로 내가 지정한 곳에 위치를 고정시킨다.
+           right : 25px; top: 30px; 오른쪽끝으로부터 25px, 위에서부터 30px만큼 떨어진곳으로 메뉴버튼을 지정.
+           display: none; 화면이 768px 전까지 메뉴버튼이 숨겨지도록 설정(media참조)*/
+        .navbar_toggleBtn {
+            position: absolute;
+            right: 25px;
+            top: 30px;
+            display: none;
+
+        }
+
+        /* media를 사용하여 반응형으로 바꿔준다.
+         screen의 너비가 0부터 최대700px(반대로 너비가 700일때부터)
+         까지는 아래있는 코드들을 사용한다. */
+        @media screen and (max-width: 700px) {
+            /* flex-direction:column;은 navbar 박스 내부의 박스들을 세로형태로 변형
+               align-items: flex-start; 내부 박스들을 왼쪽에서 시작할 수 있도록지정
+             */
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 8px 24px;
+            }
+
+            /*
+            display: none; width가 700이하일때 메뉴들이 안보이도록 지정(스크립트로 버튼 클릭시 보이도록 할 예정)
+            flex-direction:column; menu들을 박스 내부의 박스들을 세로형태로 변형
+            align-items: center는 박스 내 menu들이 가운대로 정렬되도록 한다.
+            width: 100%를 줘서 nume박스들의 공간을 줘 정상적으로 align-items가 작동하도록 함.*/
+            .navbar_menu {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+
+            /* 위와 같은 방법 */
+            .navbar_menu li {
+                width: 100%;
+                text-align: center;
+            }
+
+            /* display: none; width가 700이하일때 메뉴들이 안보이도록 지정(스크립트로 버튼 클릭시 보이도록 할 예정) */
+            .navbar_login {
+                display: none;
+                justify-content: center;
+                width: 100%
+            }
+
+            /* dlsplay:block; 으로 햄버거 메뉴 아이콘이 width가 700이하일때 보이도록 설정  */
+            .navbar_toggleBtn {
+                display: block;
+            }
+
+            /* 햄버거 메뉴 아이콘 클릭시 메뉴와 로그인창이 보이도록 설정(스크립트 이용) */
+            .navbar_menu.active,
+            .navbar_login.active {
+                display: flex;
+            }
+        }
+
+    </style>
+<style>
+
+/*<-- nav -->  */
+/* 메뉴바 호버시 화이트배경 */
+.navbar:hover {
+    background-color: white;
+}
+
+
+
+/* <-- navbar -->
+display : flex; 목록들을 가로로 나란히 나열시킴
+jsstify-content : space-between; 박스 사이 빈 공간을 넣어준다.
+align-items : center는 navbar;에 있는 박스들을 navbar내에서 가운대 정렬
+padding : 8px 12px navbar;에 공백은 위아래8px, 양 옆12px를 넣어 바짝 붙는 것을 방지시켰다.
+position:sticky; top:0; 으로 스크롤을 내릴때 고정적으로 같이 내려오도록 설정
+box-shadow : 1px 2px 3px gray;는 x축1px y축2px 번짐3px을 이용해 네비가 모든 layout-box위에 있는것처럼 효과를 넣어줬다.
+*/
+.navbar {
+    background-color: white;
+    display: flex;
+    /* position: absolute; */
+    /* justify-content: space-between; */
+    align-items: center;
+    padding: 8px 12px;
+    position: sticky; top: 0;
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+    transition: 0.5s;
+    /* background-color: white; */
+}
+.navbar.sticky {
+    /* position: fixed; */
+    background-color: white;
+}
+
+/* logo */
+.navbar_logo {
+    flex-basis: 30%;
+}
+.navbar_logo>a>h1 {
+    /* margin-left: 20px; */
+    display: inline-block;
+    font-size: 36px;
+    color: rgba(20, 5, 5, 0.801);
+    
+    /* background: orange; */
+    /* width: 10%; height: auto; */
+    /* background-color: aquamarine; */
+    
+}
+
+/* 메뉴들 글자 색상 */
+
+.navbar_menu > a > li  {
+    font-size: 20px;
+    font-weight: 900;
+    color: rgba(20, 5, 5, 0.801);
+    /* background-color: aquamarine; */
+
+}
+
+/* 마우스를 올릴시
+  글자강조(주황색, 20pt, 굵게)표시 */
+.navbar li:hover {
+    /* background-color: rgba(129, 187, 67, 0.745); */
+    border-radius: 4px;
+    color: orangered;
+    font-weight: bold;
+}
+
+
+
+/* display : flex;로 메뉴 목록들을 가로로 위치하도록 변경
+   padding:left:0; 으로 지정해 공백이 생기는것을 방지
+ */
+.navbar_menu {
+    display: flex;
+    flex-basis: 15%;
+    /* margin-left: -60px; */
+
+}
+
+/* padding : 8px 12px;로 각 메뉴마다 공간을 줬음. */
+.navbar_menu li {
+    padding: 8px 12px;
+
+
+}
+
+/* Search */
+.SearchArea{
+    margin-top: -20px;
+    display:inline;
+    padding-left: 10%;
+    text-align: center;
+    width: 300px;
+}
+/* 인풋의 디자인을 없앰 */
+.SearchArea > form > button  {
+    border: none;
+    /* 투명색 적용 */
+    background-color: transparent;
+    
+}
+
+.SearchArea > form > input {
+    border-radius: 5px;
+    border: 1.7px solid black; 
+    background: rgb(255, 255, 255);
+    width: 65%; height: 35px;
+    color:  black;
+    padding-left:10px;
+    
+}
+.SearchArea > form > button > img {
+    width: 30px;
+    height: 30px;
+    position:relative;
+    top:12px;
+    cursor: pointer;
+}
+
+
+/* flex박스로 만들어 가로로 나열 */
+.navbar_login {
+    display: flex;
+    flex-basis: 40%;
+    justify-content: flex-end;
+    /* padding-left: 10px; */
+    
+}
+/* flex-end: */
+
+/* border-right : 2px solid gray; 로그인과 회원가입 오른쪽에 구분선 표시 */
+.navbar_login>a {
+    float: right;
+    padding: 2.5px 10px 2.5px 10px;
+    border-right: 2px solid gray;
+}
+.navbar_login> a > li{
+    font-size: 17px;
+    font-weight: 900;
+    color: rgba(20, 5, 5, 0.801);
+}
+/* last-chile { border: none }로 회원가입 리스트를 지정 후 오른쪽에 표기되있던 선을 없앤다. */
+.navbar_login>a:last-child {
+    border: none;
+}
+
+/* position:absolute; 로 내가 지정한 곳에 위치를 고정시킨다. 
+   right : 25px; top: 30px; 오른쪽끝으로부터 25px, 위에서부터 30px만큼 떨어진곳으로 메뉴버튼을 지정. 
+   display: none; 화면이 768px 전까지 메뉴버튼이 숨겨지도록 설정(media참조)*/
+.navbar_toggleBtn {
+    position: absolute;
+    right: 25px;
+    top: 20px;
+    display: none;
+
+}
+
+
+/* media를 사용하여 반응형으로 바꿔준다.
+ screen의 너비가 0부터 최대700px(반대로 너비가 700일때부터)
+ 까지는 아래있는 코드들을 사용한다. */
+@media screen and (max-width: 768px) {
+
+    /* flex-direction:column;은 navbar 박스 내부의 박스들을 세로형태로 변형
+       align-items: flex-start; 내부 박스들을 왼쪽에서 시작할 수 있도록지정
+     */
+    .navbar {
+        z-index: 2;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 24px;
+        opacity: 1;
+        background-color: white;
+        margin: 0; padding: 0;
+        
+    }
+
+    /*
+    display: none; width가 700이하일때 메뉴들이 안보이도록 지정(스크립트로 버튼 클릭시 보이도록 할 예정) 
+    flex-direction:column; menu들을 박스 내부의 박스들을 세로형태로 변형   
+    align-items: center는 박스 내 menu들이 가운대로 정렬되도록 한다.
+    width: 100%를 줘서 nume박스들의 공간을 줘 정상적으로 align-items가 작동하도록 함.*/
+    .navbar_menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background-color: white;
+        /* border-top: 1px solid black; */
+
+        margin: 0; padding: 0;
+    }
+
+    /* 위와 같은 방법 */
+    .navbar_menu li {
+        width: 100%;
+        text-align: center;
+        /* border-top: 1px solid black; */
+    }
+    .SearchArea{
+        display: none;
+    }
+    /* display: none; width가 700이하일때 메뉴들이 안보이도록 지정(스크립트로 버튼 클릭시 보이도록 할 예정) */
+    .navbar_login {
+        display: none;
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+        /* margin-left: 4%; */
+        background-color: white;
+        padding-left: 20px;
+        
+    }
+    .navbar_login li {
+        border: 2px bold black;
+    }
+
+    /* dlsplay:block; 으로 햄버거 메뉴 아이콘이 width가 700이하일때 보이도록 설정  */
+    .navbar_toggleBtn {
+        display: block;
+    }
+
+    /* 햄버거 메뉴 아이콘 클릭시 메뉴와 로그인창이 보이도록 설정(스크립트 이용) */
+    .navbar_menu.active,
+    .navbar_login.active {
+        display: flex;
+    }
+}
+footer{
+            clear: both; 
+            height: 380px;
+            font-size: 20px; 
+            font-weight: bold;
+            color: aliceblue; 
+            line-height: 30px;  
+            background-color: #253343; 
+	text-align: center;
+	}
+</style>
+    <!--상세 페이지 css-->
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+
+        .mycards {
+            margin: auto;
+            width: 95%;
+            max-width: 1200px;
+
+        }
+
+        .card-style1 {
+            margin-left: auto;
+            margin-right: auto;
+            height: 700px;
+            /*background-color: chocolate;*/
+            border: 1px solid lightgray;
+            width: 600px;
+        }
+
+        .mytitle {
+            width: 100%;
+            height: 450px;
+            /*linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),*/
+            background-image: url('http://www.chemicalnews.co.kr/news/photo/202106/3516_10118_3834.jpg');
+            background-position: center;
+            background-size: cover;
+
+            color: black;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn {
+            margin: 1rem;
+
+        }
+    </style>
+</head>
+<!--네비-->
+<nav class="navbar">
+    <div class="navbar_logo">
+        <a href="../main.html"><img src="../images/logo.png" width="150" height="50">
+          
+        </a>
+    </div>
+    <ul class="navbar_menu">
+        <a href="../Food/Food메인.html"><li>Food</li></a>
+        <a href="../Entertainment/Entertainment메인.html"><li>Entertainment</li></a>
+        <a href="./story.html"><li>Story</li></a>
+    </ul>
+    <div class="SearchArea">
+<div class="SearchArea">
+  <form>
+      <!-- 검색창을 만들었으며, 그 안에 Search라는 단어를 넣음 -->
+      <input type="search" placeholder="Search">
+      <!-- <input type="image" src="../images/search.png"  width="20" height="alt"> -->
+      <button type="button"><img src="../images/search.png" alt=""></button>
+  </form>
+</div>
+    </div>
+<ul class="navbar_login">
+    <a href="../로그인/로그인카카오api.html"><li>로그인</li></a>
+    <a href="../회원가입/회원가입.html"><li>회원가입</li></a>
+</ul>
+    <a href="#" class="navbar_toggleBtn">
+        <img src="../images/menu_btn.png" width="30" height="20" color="white">
+    </a>
+
+</nav>
+<!--navigation-->
+<script>
+    // 변수선언
+    const toggleBtn = document.querySelector('.navbar_toggleBtn');
+    const menu = document.querySelector('.navbar_menu');
+    const login = document.querySelector('.navbar_login');
+
+    // navbtn을 클릭할때마다 아래함수들를 호출
+    toggleBtn.addEventListener('click', () => {
+        menu.classList.toggle('active');
+        login.classList.toggle('active');
+    });
+
+</script>
+
+<!--상세페이지-->
+
+<body>
+
+<div class="mytitle" id="mytitle"></div>
+
+<div class="section-header" id="section-header" style="margin-top: 50px;">
+    <div style="margin-bottom: 30px;">
+        <div style="float: left;">
+            <h1 class="section-title" style="width: 20%; padding-left: 50%;">
+                Story
+            </h1>
+        </div>
+        <!--        role="presentation" class="category"-->
+    </div>
+</div>
+
+
+
+<div class="mycards">
+    <div class="card" style="margin-left: 415px; height: 550px; margin-top: 80px;">
+
+            <!-- 카드 헤더 -->
+            <div class="card-header">
+            </div>
+
+            <!--  카드 바디 -->
+            <div class="card-body">
+
+                <!--  카드 바디 헤더 -->
+                <div class="card-body-header">
+
+                    <h1 class="h1_2">관악산</h1>
+                    <p class="card-body-hashtag">#명소</p>
+                    <p class="card-body-nickname">
+                    </p>
+                </div>
+                <p class="card-body-description">
+                    여기가 관악산이로구나~
+                </p>
+                <!--  카드 바디 본문 -->
+
+                <!--  카드 바디 푸터 -->
+                <div class="card-body-footer">
+
+                    <hr style="margin-bottom: 8px; opacity: 0.5; border-color: #EF5A31">
+                    별점⭐⭐⭐⭐⭐
+                    <i class="reg_date"> 2022/11/29 </i>
+                </div>
+            </div>
+
+    </div>
+    <button class="w-btn-neon2" type="button" style="margin-left: 41%; margin-right: 33%; margin-bottom: 150px;" >
+        <a href="../Entertainment/Enter_sub/Ent_more_best.html" style="text-decoration: none;"><span>명소 정보 보러가기!</span></a>
+    </button>
+</div>
+<footer>
+    <img src="../images/footer.png " width="200" height="150">
+    <br><p style="color:aliceblue; font-size: 20px;">
+    TEL. +82-2-123-4567 | FAX. 0123.456.7890 | MAIL. abcd123@naver.com</br>
+    ADDRESS. 서울특별시 관악구 봉천로 227. 보라매샤르망 505호<br>
+    CEO.저장해 | 사업자등록번호 : 0987-65-4321<br>
+    <hr>
+    Copyright ⓒ All Rights Reserved / published by 저장해조_design
+    </p>
+</footer>
+
+</body>
+</html>

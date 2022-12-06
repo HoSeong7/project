@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>우리 동네</title>
+  <link rel="stylesheet" href="Entertainment.css" />
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+
+  <!-- Demo styles -->
+  <style>
+    html,
+    body {
+      position: relative;
+      height: 100%;
+    }
+
+    body {
+
+      /* font-family: Helvetica Neue, Helvetica, Arial, sans-serif; */
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
+
+    .swiper {
+      width: 100%;
+      height: 65%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .swiper-slide a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 헤더 -->
+  <nav class="navbar">
+    <div class="navbar_logo">
+        <a href="../main.html"><img src="../images/logo.png" width="150" height="50">
+          
+        </a>
+    </div>
+    <ul class="navbar_menu">
+        <a href="../Food/Food메인.html"><li>Food</li></a>
+        <a href="Entertainment메인.html"><li>Entertainment</li></a>
+        <a href="../Story/story.html"><li>Story</li></a>
+    </ul>
+    <div class="SearchArea">
+<div class="SearchArea">
+  <form>
+      <!-- 검색창을 만들었으며, 그 안에 Search라는 단어를 넣음 -->
+      <input type="search" placeholder="Search">
+      <button type="button"><img src="../images/search.png" alt=""></button>
+  </form>
+</div>
+    </div>
+<ul class="navbar_login">
+    <a href="../로그인/로그인카카오api.html"><li>로그인</li></a>
+    <a href="../회원가입/회원가입.html"><li>회원가입</li></a>
+</ul>
+    <a href="#" class="navbar_toggleBtn">
+        <img src="../images/menu_btn.png" width="30" height="20" color="white">
+    </a>
+
+</nav>
+  <!-- 메인 이미지 스와이퍼 추가-->
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="이미지들/메인화면.png" alt="" />
+        <div class="메인소개"><span class="큰소개글">눈이 즐겨운 야경과 시원한 밤공기</span><br><br><span class="작은소개글">서울특별시 관악구 봉천로53길
+            28</span></div>
+      </div>
+      <div class="swiper-slide"><img src="이미지들/장소1.png" alt="" />
+        <div class="메인소개"><span class="큰소개글">따스한 햇볕 북적북적 많은 사람들이 있는</span><br><br><span class="작은소개글">관악산 호수공원 - 서울특별시 관악구
+            대학동 203</span></div>
+      </div>
+      <div class="swiper-slide"><img src="이미지들/장소2.jpg" alt="" />
+        <div class="메인소개"><span class="큰소개글">추워도 막을 수 없는 겨울 캠핑의 낭만</span><br><br><span class="작은소개글">겨울 특가 최대
+            76%할인</span></div>
+      </div>
+      <div class="swiper-slide"><img src="이미지들/장소3.jpg" alt="" />
+        <div class="메인소개"><span class="큰소개글">추워도 막을 수 없는 겨울 캠핑의 낭만</span><br><br><span class="작은소개글">겨울 특가 최대
+            76%할인</span></div>
+      </div>
+      <div class="swiper-slide"><img src="이미지들/장소4.jpg" alt="" />
+        <div class="메인소개"><span class="큰소개글">추워도 막을 수 없는 겨울 캠핑의 낭만</span><br><br><span class="작은소개글">겨울 특가 최대
+            76%할인</span></div>
+      </div>
+      <div class="swiper-slide"><img src="이미지들/겨울.png" alt="" />
+        <div class="메인소개"><span class="큰소개글">추워도 막을 수 없는 겨울 캠핑의 낭만</span><br><br><span class="작은소개글">겨울 특가 최대
+            76%할인</span></div>
+      </div>
+      <div class="swiper-slide"><img src="이미지들/체험3.png" alt="">
+        <div class="메인소개"><span class="큰소개글">추워도 막을 수 없는 겨울 캠핑의 낭만</span><br><br><span class="작은소개글">겨울 특가 최대
+            76%할인</span></div>
+      </div>
+      <div class="swiper-slide"><img src="이미지들/체험2.jpg" alt="">
+        <div class="메인소개"><span class="큰소개글">추워도 막을 수 없는 겨울 캠핑의 낭만</span><br><br><span class="작은소개글">겨울 특가 최대
+            76%할인</span></div>
+      </div>
+      <div class="swiper-slide"><img src="이미지들/체험1.png" alt="">
+        <div class="메인소개"><span class="큰소개글">추워도 막을 수 없는 겨울 캠핑의 낭만</span><br><br><span class="작은소개글">겨울 특가 최대
+            76%할인</span></div>
+      </div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      spaceBetween: 30,
+      centeredSlides: true,
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+    // 변수선언
+    const toggleBtn = document.querySelector('.navbar_toggleBtn');
+    const menu = document.querySelector('.navbar_menu');
+    const login = document.querySelector('.navbar_login');
+
+    // navbtn을 클릭할때마다 아래함수들를 호출
+    toggleBtn.addEventListener('click', () => {
+      menu.classList.toggle('active');
+      login.classList.toggle('active');
+    });
+  </script>
+
+  <!-- 우리 동네 명소 -->
+
+
+  <h3 class="리뷰분류">우리 동네 명소<a href="Enter_sub/Ent_more_best.html">더 보기</a></h3>
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper" style="padding-top: 50px;">
+      <div class="swiper-slide">
+        <section id="우동맛">
+          <a href="Enter_sub/Ent_detail_best1.html">
+            <img src="Enter_sub/images/Gwanak_mt.jpg" alt="장소" />
+            <div id="별점"><img src="이미지들/주황색 별점.png" alt="별" />4.91</div>
+            <div id="가게명">관악산</div>
+            <div></div>
+            <div id="메뉴">
+              #관악산 #삼성산 #등산
+            </div>
+            <br />
+            <div id="위치">서울특별시 관악구 신림동 211</div>
+          </a>
+
+          <a href="Enter_sub/Ent_detail_best2.html">
+            <img src="Enter_sub/images/naksung_photo1.gif" alt="장소" />
+            <div id="별점"><img src="이미지들/주황색 별점.png" alt="별" />3.53</div>
+            <div id="가게명">낙성대</div>
+            <div id="메뉴">
+              #낙성대공원 #강감찬 #가을나들이
+            </div>
+            <br />
+            <div id="위치">서울 관악구 낙성대로 77</div>
+          </a>
+
+          <a href="Enter_sub/Ent_detail_best3.html">
+            <img src="이미지들/장소3.jpg" alt="장소" />
+            <div id="별점"><img src="이미지들/주황색 별점.png" alt="별" />3.43</div>
+            <div id="가게명">샤로수길</div>
+            <div></div>
+            <div id="메뉴">
+              #샤로수길 #서울대입구 #낙성대
+            </div>
+            <br />
+            <div id="위치">서울특별시 관악구 봉천동 980-3</div>
+          </a>
+
+          <a href="Enter_sub/Ent_detail_best1.html">
+            <img src="Enter_sub/images/SD (4).jpg" alt="장소" />
+            <div id="별점"><img src="이미지들/주황색 별점.png" alt="별" />4.42</div>
+            <div id="가게명">신림동 순대타운</div>
+            <div id="메뉴">
+              #순대 맛집 #순대 볶음 #신림
+            </div>
+            <br />
+            <div id="위치">서울 관악구 신림로59길 14</div>
+          </a>
+
+          <a href="Enter_sub/Ent_detail_best2.html">
+            <img src="Enter_sub/images/Dorim.jpg" alt="장소" />
+            <div id="별점"><img src="이미지들/주황색 별점.png" alt="별" />4.67</div>
+            <div id="가게명">도림천</div>
+            <div id="메뉴">
+              #산책로 #데이트 코스
+            </div>
+            <br />
+            <div id="위치">서울특별시 관악구 신림동 1642-7</div>
+          </a>
+
+          <a href="Enter_sub/Ent_detail_best3.html">
+            <img src="이미지들/장소1.png" alt="장소" />
+            <div id="별점"><img src="이미지들/주황색 별점.png" alt="별" />3.82</div>
+            <div id="가게명">규장각</div>
+            <div id="메뉴">
+              #서울대 #서적수집관리
+            </div>
+            <br />
+            <div id="위치">서울 관악구 관악로1 103동</div>
+          </a> </section>
+      </div>
+      <div class="swiper-slide">
+        <section id="우동맛">
+
+          <a href="Enter_sub/Ent_detail_best1.html">
+            <img src="이미지들/장소1.png" alt="장소" />
+            <div id="별점"><img src="이미지들/주황색 별점.png" alt="별" />4.8</div>
+            <div id="가게명">관악산</div>
+            <div></div>
+            <div id="메뉴">
+              #관악산 #삼성산 #등산
+            </div>
+            <br />
+            <div id="위치">서울 관악구 신림로65길 42</div>
+          </a>
+
+          <a href="Enter_sub/Ent_detail_best2.html">
+            <img src="이미지들/장소2.jpg" alt="장소" />
+            <div id="별점"><img src="이미지들/주황색 별점.png" alt="별" />3.8</div>
+            <div id="가게명">낙성대</div>
+            <div id="메뉴">
+              #낙성대공원 #강감찬 #가을나들이
+            </div>
+            <br />
+            <div id="위치">서울 관악구 신림로65길 42</div>
+          </a>
+
+          <a href="Enter_sub/Ent_detail_best3.html">
+            <img src="이미지들/장소3.jpg" alt="장소" />
+            <div id="별점"><img src="이미지들/주황색 별점.png" alt="별" />3.8</div>
+            <div id="가게명">샤로수길</div>
+            <div></div>
+            <div id="메뉴">
+              #샤로수길 #서울대입구 #낙성대
+            </div>
+            <br />
+            <div id="위치">서울 관악구 신림로65길 42</div>
+          </a>
+
+          <a href="Enter_sub/Ent_detail_best1.html">
+            <img src="이미지들/장소4.jpg" alt="장소" />
+            <div id="별점"><img src="이미지들/주황색 별점.png" alt="별" />3.8</div>
+            <div id="가게명">신림동 순대타운</div>
+            <div id="메뉴">
+              #순대 맛집 #순대 볶음 #신림
+            </div>
+            <br />
+            <div id="위치">서울 관악구 신림로65길 42</div>
+          </a>
+
+          <a href="Enter_sub/Ent_detail_best2.html">
+            <img src="이미지들/장소2.jpg" alt="장소" />
+            <div id="별점"><img src="이미지들/주황색 별점.png" alt="별" />3.8</div>
+            <div id="가게명">도림천</div>
+            <div id="메뉴">
+              #산책로 #데이트 코스
+            </div>
+            <br />
+            <div id="위치">서울 관악구 신림로65길 42</div>
+          </a>
+
+          <a href="Enter_sub/Ent_detail_best3.html">
+            <img src="이미지들/장소1.png" alt="장소" />
+            <div id="별점"><img src="이미지들/주황색 별점.png" alt="별" />3.8</div>
+            <div id="가게명">규장각</div>
+            <div id="메뉴">
+              #서울대 #서적수집관리
+            </div>
+            <br />
+            <div id="위치">서울 관악구 신림로65길 42</div>
+          </a>
+
+        </section>
+      </div>
+      <div class="swiper-slide">
+        <section id="우동맛">
+          <a href="Enter_sub/Ent_detail_best1.html">
+            <img src="이미지들/장소1.png" alt="장소" />
+            <div id="별점"><img src="이미지들/주황색 별점.png" alt="별" />4.8</div>
+            <div id="가게명">관악산</div>
+            <div></div>
+            <div id="메뉴">
+              #관악산 #삼성산 #등산
+            </div>
+            <br />
+            <div id="위치">서울 관악구 신림로65길 42</div>
+          </a>
+
+          <a href="Enter_sub/Ent_detail_best2.html">
+            <img src="이미지들/장소2.jpg" alt="장소" />
+            <div id="별점"><img src="이미지들/주황색 별점.png" alt="별" />3.8</div>
+            <div id="가게명">신림동 순대타운</div>
+            <div id="메뉴">
+              #순대 맛집 #순대 볶음 #신림
+            </div>
+            <br />
+            <div id="위치">서울 관악구 신림로65길 42</div>
+          </a>
+
+          <a href="Enter_sub/Ent_detail_best3.html">
+            <img src="이미지들/장소3.jpg" alt="장소" />
+            <div id="별점"><img src="이미지들/주황색 별점.png" alt="별" />3.8</div>
+            <div id="가게명">도림천</div>
+            <div></div>
+            <div id="메뉴">
+              #산책로 #데이트 코스
+            </div>
+            <br />
+            <div id="위치">서울 관악구 신림로65길 42</div>
+          </a>
+
+          <a href="Enter_sub/Ent_detail_best1.html">
+            <img src="이미지들/장소4.jpg" alt="장소" />
+            <div id="별점"><img src="이미지들/주황색 별점.png" alt="별" />3.8</div>
+            <div id="가게명">규장각</div>
+            <div id="메뉴">
+              #서울대 #서적수집관리
+            </div>
+            <br />
+            <div id="위치">서울 관악구 신림로65길 42</div>
+          </a>
+
+          <a href="Enter_sub/Ent_detail_best2.html">
+            <img src="이미지들/장소2.jpg" alt="장소" />
+            <div id="별점"><img src="이미지들/주황색 별점.png" alt="별" />3.8</div>
+            <div id="가게명">샤로수길</div>
+            <div id="메뉴">
+              #샤로수길 #서울대입구 #낙성대
+            </div>
+            <br />
+            <div id="위치">서울 관악구 신림로65길 42</div>
+          </a>
+
+          <a href="Enter_sub/Ent_detail_best3.html">
+            <img src="이미지들/장소1.png" alt="장소" />
+            <div id="별점"><img src="이미지들/주황색 별점.png" alt="별" />3.8</div>
+            <div id="가게명">낙성대</div>
+            <div id="메뉴">
+              #낙성대공원 #강감찬 #가을나들이
+            </div>
+            <br />
+            <div id="위치">서울 관악구 신림로65길 42</div>
+          </a> </section>
+      </div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      spaceBetween: 30,
+      centeredSlides: true,
+      autoplay: {
+        delay: 200000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+
+
+  <!-- 리뷰 -->
+
+  <section id="우동맛" style="padding: 30px;">
+    <h3 class="리뷰분류" style="margin-bottom: 35px;">Story<a href="../Story/story.html">더 보기</a></h3>
+
+    <a href="../Story/story_detail3.html">
+      <img src="Enter_sub/images/SundayMood0.jpg" alt="장소" />
+      <div id="별점"><img src="이미지들/주황색 별점.png" alt="별" />3.8</div>
+      <div id="가게명">선데이무드</div>
+      <div></div>
+      <div id="메뉴">
+        기사님이 실력자셔서 여기서 인생사진 건졌네요:)
+      </div>
+
+      <br />
+      <div id="위치">서울 관악구 신림로65길 42</div>
+    </a>
+
+    <a href="../Story/story_detail.html">
+      <img src="Enter_sub/images/naksung_photo2.gif" alt="장소" />
+      <div id="별점"><img src="이미지들/주황색 별점.png" alt="별" />3.8</div>
+      <div id="가게명">낙성대</div>
+      <div id="메뉴">
+        운치랑 분위기가 정말 끝내줍니다...! 힐링명소! 추천해요!~
+      </div>
+
+      <br />
+      <div id="위치">서울 관악구 신림로65길 42</div>
+    </a>
+
+    <a href="../Story/story_detail2.html">
+      <img src="Enter_sub/images/Sha_road.jpg" alt="장소" />
+      <div id="별점"><img src="이미지들/주황색 별점.png" alt="별" />3.8</div>
+      <div id="가게명">샤로수길</div>
+      <div></div>
+      <div id="메뉴">
+        요즘 제일 핫플 아마 여기아닐까 싶네요 데이트 장소 강추!
+      </div>
+      <br />
+      <div id="위치">서울 관악구 신림로65길 42</div>
+    </a>
+  </section>
+
+  <!-- 신규 가게 -->
+
+  <section id="신규">
+    <h3>최근 핫플레이스<a href="./Enter_sub/Ent_more_new.html">더 보기</a></h3>
+
+    <a href="Enter_sub/Ent_detail_new1.html">
+      <div class="신규가게사진"><img src="Enter_sub/images/SeMA4.jpg" alt="" /></div>
+      <div class="new"><span>new!</span></div>
+      <div class="가게정보">
+        <span class="가게이름">서울시립 남서울미술관</span> <br /><span class="음식분류">예술</span><span class="위치"> - 서울 관악구 남부순환로
+          2076</span>
+      </div>
+    </a>
+
+    <a href="Enter_sub/Ent_detail_new2.html">
+      <div class="신규가게사진">
+        <img src="Enter_sub/images/ManyVeryMuch.jpg" alt="스테이크" />
+      </div>
+      <div class="new"><span>new!</span></div>
+      <div class="가게정보">
+        <span class="가게이름">MANYVERYMUCH</span><br /><span class="음식분류">소품샵</span><span class="위치"> - 서울 관악구 관악로14길 105
+          1층</span>
+      </div>
+    </a>
+
+    <a href="Enter_sub/Ent_detail_new3.html">
+      <div class="신규가게사진">
+        <img src="Enter_sub/images/Sundaymood.jpg" alt="" />
+      </div>
+      <div class="new"><span>new!</span></div>
+      <div class="가게정보">
+        <span class="가게이름">선데이무드</span><br /><span class="음식분류">촬영</span><span class="위치"> - 서울 관악구 남부순환로 1467 라비앙DS
+          3층</span>
+      </div>
+    </a>
+  </section>
+
+  <!-- 이색체험 -->
+
+  <section id="우동맛">
+    <h3 class="리뷰분류" style="margin-bottom: 30px;">이색 체험<a href="Enter_sub/Ent_more_experience.html">더 보기</a></h3>
+
+    <a href="Enter_sub/Ent_detail_exp1.html">
+      <img src="Enter_sub/images/Soap.jpg" alt="제육" />
+      <div id="별점"><img src="이미지들/주황색 별점.png" alt="별" />3.52</div>
+      <div id="가게명">희다솝</div>
+      <div></div>
+      <div id="메뉴">
+        #희다솝 #천연비누#수제 비누 클래스
+      </div>
+      <br />
+      <br />
+      <div id="위치">서울 관악구 남부순환로161길 23 1층</div>
+    </a>
+
+    <a href="Enter_sub/Ent_detail_exp2.html">
+      <img src="Enter_sub/images/Color.jpg" alt="스테이크" />
+      <div id="별점"><img src="이미지들/주황색 별점.png" alt="별" />3.82</div>
+      <div id="가게명">컬러심리연구소</div>
+      <div id="메뉴">
+        #컬러테라피 #컬러심리상담 #색채치료
+      </div>
+      <br />
+      <br />
+      <div id="위치">서울 관악구 남부순환로 1794 </div>
+    </a>
+
+    <a href="Enter_sub/Ent_detail_exp3.html">
+      <img src="이미지들/체험3.png" alt="고기덮밥" />
+      <div id="별점"><img src="이미지들/주황색 별점.png" alt="별" />3.8</div>
+      <div id="가게명">인클라이밍센터</div>
+      <div></div>
+      <div id="메뉴">
+        #인클라이밍센터 #실내클라이밍
+      </div>
+      <br /><br />
+      <div id="위치">서울 관악구 남부순환로 1951 지층</div>
+    </a>
+  </section>
+  <footer>
+    <img src="../images/footer.png " width="200" height="150">
+    <br>
+    <p>
+      TEL. +82-2-123-4567 | FAX. 0123.456.7890 | MAIL. abcd123@naver.com</br>
+      ADDRESS. 서울특별시 관악구 봉천로 227. 보라매샤르망 505호<br>
+      CEO.저장해 | 사업자등록번호 : 0987-65-4321<br>
+      <hr>
+      Copyright ⓒ All Rights Reserved / published by ROM_design
+    </p>
+  </footer>
+</body>
+
+</html>

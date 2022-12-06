@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="로그인.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar_logo">
+            <a href="../main.html"><img src="../images/logo.png" width="150" height="50">
+          
+            </a>
+        </div>
+        <ul class="navbar_menu">
+            <a href="../Food/Food메인.html"><li>Food</li></a>
+            <a href="../Entertainment/Entertainment메인.html"><li>Entertainment</li></a>
+            <a href="../Story/story.html"><li>Story</li></a>
+        </ul>
+        <div class="SearchArea">
+  <div class="SearchArea">
+      <form>
+          <!-- 검색창을 만들었으며, 그 안에 Search라는 단어를 넣음 -->
+          <input type="search" placeholder="Search">
+          <!-- <input type="image" src="../images/search.png"  width="20" height="alt"> -->
+          <button type="button"><img src="../images/search.png" alt=""></button>
+      </form>
+  </div>
+        </div>
+    <ul class="navbar_login">
+        <a href="../로그인/로그인카카오api.html"><li>로그인</li></a>
+        <a href="../회원가입/회원가입.html"><li>회원가입</li></a>
+    </ul>
+        <a href="#" class="navbar_toggleBtn">
+            <img src="../images/menu_btn.png" width="30" height="20" color="white">
+        </a>
+    
+    </nav>
+    <div id="로그인">
+        <span>로그인</span><br><br>
+        <form action="">
+            <input type="text" id="입력창" placeholder="아이디"><br>
+            <input type="password" id="입력창" placeholder="비밀번호"><br>
+            <span id="로그인상태"><input type="checkbox"><span>로그인 상태 유지</span></span>
+            <span id="찾기"><a href="" id="idfind">아이디 찾기 </a>
+            <span style="color: grey; font-size: 7px; border-left: 1px solid;">&nbsp</span><a href="">비밀번호 찾기</a></span>
+            <br>
+            <input id="로그인버튼" type="submit" value="로그인" style=" cursor: pointer;">
+        </form>
+        <a href="../회원가입/회원가입.html" id="회원가입버튼"><span>회원가입</span></a><br>
+        <a href="javascript:kakaoLogin();" id="카카오">
+            <img src="" alt=""><img src="이미지/카카오톡 말풍선.png" alt=""><span>카카오 로그인<span>
+        </a>
+    </div>
+
+    <!-- 카카오 로그인 코드 추가 -->
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script>
+        window.Kakao.init("7c91b4accaf79034c46f0bda6987cb7f");
+
+        function kakaoLogin() {
+            window.Kakao.Auth.login({
+                scope: 'profile_nickname, profile_image, account_email, gender',
+                success: function (authObj) {
+                    console.log(authObj);
+                    window.Kakao.API.request({
+                        url: '/v2/user/me',
+                        success: res => {
+                            const kakao_account = res.kakao_account;
+                            console.log(kakao_account);
+                        }
+                    });
+                }
+            });
+        }
+        // 변수선언
+const toggleBtn = document.querySelector('.navbar_toggleBtn');
+const menu = document.querySelector('.navbar_menu');
+const login = document.querySelector('.navbar_login');
+
+// navbtn을 클릭할때마다 아래함수들를 호출
+toggleBtn.addEventListener('click', () => {
+    menu.classList.toggle('active');
+    login.classList.toggle('active');
+});
+
+    </script>
+</body>
+
+</html>
