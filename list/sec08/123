@@ -1,0 +1,26 @@
+select * from member;
+
+create table product(
+	code		int(5),
+	name		varchar(100),
+	price		int(8),
+	pictureurl	varchar(50),
+	description	varchar(1000),
+	primary key(code)
+);
+
+select * from product;
+
+select * from member;
+
+select * from product;
+
+drop table product;
+
+create table product(
+	code		int(5) auto_increment primary key,
+	name		varchar(100),
+	price		int(8),
+	pictureurl	varchar(50),
+	description	varchar(1000)
+);
