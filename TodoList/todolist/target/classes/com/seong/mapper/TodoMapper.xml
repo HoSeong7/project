@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.seong.mapper.TodoMapper">
+
+<!-- 	<sql id="criteria">
+		<trim prefix="(" suffix=") and " prefixOverrides="or">
+			<foreach item='type' collection="typeArr">
+				<trim prefix="or">
+					<choose>
+						<when test="type=='T'.toString()">
+							title like '%'||#{keyword}||'%'
+						</when>
+						<when test="type=='C'.toString()">
+							content like '%'||#{keyword}||'%'
+						</when>
+						<when test="type=='W'.toString()">
+							writer like '%'||#{keyword}||'%'
+						</when>
+					</choose>
+				</trim>
+			</foreach>
+		</trim>
+	</sql> -->
+
+	<select id="getList" resultType="com.seong.domain.TodoVO">
+		select * from tbl_todo order by
+		no DESC
+	</select>
+
+	<!-- <select id="getListWithPaging"
+		resultType="com.seong.domain.TotoVO">
+		select url, no, clear, title, regDate, updateDate from
+		(select /*+
+		index_desc(tbl_todo pk_todo)*/
+		rownum rn, url, no, clear, title,
+		regDate, updateDate from tbl_todo where
+		<include refid="criteria"></include>
+		<![CDATA[
+				rownum <= #{pageNum} * #{amount})
+		where rn > (#{pageNum} -1) * #{amount}
+		]]>
+	</select> -->
+	
+	<!-- <select id="getTotalCount" resultType="int">
+		select count(*) from
+		tbl_todo where 
+		<include refid="criteria"></include>
+		no > 0
+	</select> -->
+
+</mapper>
+
